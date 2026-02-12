@@ -24,7 +24,10 @@ export class InstalacionSeeder implements Seeder{
             instalacionEntry.email = item.email;
             instalacionEntry.capacidad_max = item.capacidad_max;
             instalacionEntry.descripcion = item.descripcion;
-            instalacionEntry.fecha_creacion = item.fecha_creacion;
+            instalacionEntry.fecha_creacion =
+            item.fecha_creacion instanceof Date
+                ? item.fecha_creacion.toISOString().slice(0, 10)
+                : String(item.fecha_creacion).slice(0, 10);
             instalacionEntry.estado = item.estado;
             instalacionEntry.horario_apertura = "08:00:00";
             instalacionEntry.horario_cierre = "22:00:00";
