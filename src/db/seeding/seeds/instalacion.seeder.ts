@@ -26,9 +26,9 @@ export class InstalacionSeeder implements Seeder{
             instalacionEntry.descripcion = item.descripcion;
             instalacionEntry.fecha_creacion = item.fecha_creacion;
             instalacionEntry.estado = item.estado;
-            instalacionEntry.horario_apertura = item.horario_apertura;
-            instalacionEntry.horario_cierre = item.horario_cierre;
-
+            instalacionEntry.horario_apertura = "08:00:00";
+            instalacionEntry.horario_cierre = "22:00:00";
+            
             instalacionEntries.push(instalacionEntry);
         }
 
