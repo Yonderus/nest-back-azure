@@ -30,7 +30,7 @@ export class Instalacion {
   @Column()
   descripcion: string;
 
-  @Column({ type: "date", default: () => "curdate()" })
+  @Column({ type: "date" })
   fecha_creacion: string;
 
   @Column({
