@@ -30,12 +30,8 @@ export class Instalacion {
   @Column()
   descripcion: string;
 
-  @CreateDateColumn({
-    name: "fecha_creacion",
-    type: "timestamp",
-    default: () => "CURRENT_TIMESTAMP",
-  })
-  fecha_creacion: Date;
+  @Column({ type: "date", default: () => "curdate()" })
+  fecha_creacion: string;
 
   @Column({
     type: "enum",
