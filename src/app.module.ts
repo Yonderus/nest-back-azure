@@ -32,9 +32,9 @@ import { AuthModule } from './auth/auth.module';
       autoLoadEntities: true,
       synchronize: true,
 
-       // ✅ Azure MySQL Flexible Server suele exigir SSL (require_secure_transport=ON)
-      ssl: process.env.DB_SSL === 'true' ? { rejectUnauthorized: true } : undefined,
-      extra: process.env.DB_SSL === 'true' ? { ssl: { rejectUnauthorized: true } } : undefined,
+       // ✅ Forzar SSL siempre (Azure lo exige)
+      ssl: { rejectUnauthorized: true },
+      extra: { ssl: { rejectUnauthorized: true } },
     }),
     UsersModule,
     ReservaModule,
@@ -52,3 +52,4 @@ import { AuthModule } from './auth/auth.module';
 })
 
 export class AppModule {}
+
